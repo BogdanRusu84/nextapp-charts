@@ -1,0 +1,28 @@
+name: nextapp
+namespace: myapp
+labels:
+  app: nexapp
+deployment:
+  image: bogdy84/nextapp1:v1
+  containerName: nextapp
+  containerPort: 3000
+  replicas: 1
+  restart_policy: on-failure
+service:
+  port: 80
+  targetPort: 3000
+  type: NodePort
+hpa:
+  minReplica: 1
+  maxReplica: 2
+  targetResource: 
+    name: memory
+    type: AverageValue
+    value: 700Mi
+ingress:
+  ingressClassName: nginx
+  host: myapp.local
+  rules:
+    path: "/"
+    service: front-end
+    port: 80

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextapp
+  namespace: myapp
+spec:
+  selector:
+    matchLabels:
+      app: nextapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nextapp
+    spec:
+      containers:
+      - name: nextapp
+        image: bogdy84/nextapp1:v1
+        ports:
+          - containerPort: 3000

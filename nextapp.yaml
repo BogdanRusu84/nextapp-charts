@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nextapp
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/BogdanRusu84/nextapp.git
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: myapp
