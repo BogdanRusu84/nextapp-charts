@@ -9,7 +9,7 @@ spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
-      {{ .Values.labels.app }}
+      app: {{ .Values.labels.app }}
   template:
     metadata:
       labels:

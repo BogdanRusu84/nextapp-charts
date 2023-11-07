@@ -22,6 +22,3 @@ hpa:
 ingress:
   ingressClassName: nginx
   host: myapp.local
-  rules:
-    path: "/"
-    port: 80
