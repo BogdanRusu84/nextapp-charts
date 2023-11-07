@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        {{ .Values.labels.app  }}
+        app: {{ .Values.labels.app  }}
     spec:
       containers:
         - name: {{ .Values.deployment.containerName }}
