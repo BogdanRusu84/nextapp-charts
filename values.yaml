@@ -1,7 +1,7 @@
 name: nextapp
 namespace: myapp
 labels:
-  app: nexapp
+  app: nextapp
 deployment:
   image: bogdy84/nextapp1:v1
   containerName: nextapp
